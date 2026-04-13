@@ -2,7 +2,7 @@
 
 <img src="readme-assets/to-build-or-not-to-build-meme.png" alt="To Build or Not to Build" width="500"/>
 
-# App Idea Validation Agent
+# Startup Idea Validation Agent
 ### *To Build or Not to Build — that is the question this answers.*
 
 **Stop guessing. Start validating.**
@@ -23,9 +23,9 @@ Clone the repo. Open it in your AI tool. Start talking. No setup, no API keys, n
 
 ---
 
-## Who It's For
+## Who Is This For?
 
-- **Indie app developers** who want to validate ideas before building
+- **Indie app developers** who want to validate app ideas before building
 - **Solo founders** exploring B2C startup ideas and looking for a data-driven brainstorming partner
 - **Side-project builders** deciding where to invest their limited time
 - **Aspiring developers** with no idea yet who want to discover one worth building
@@ -79,7 +79,7 @@ git clone https://github.com/MaxKmet/idea-validation-agents.git
 
 ---
 
-## Workflows — 4 Ways to Use the Agent
+## Workflows - 4 Ways to Use the Agent
 
 ### 💡 Idea Generation — *"I don't know what to build"* · `~10–15 min`
 
@@ -190,8 +190,8 @@ memory/
 
 <div align="center">
 
-**[⭐ Star this repo](https://github.com/MaxKmet/idea-validation-agents)** — helps other indie developers find it.
+**[⭐ Star this repo](https://github.com/MaxKmet/idea-validation-agents)** so you don't lose it.
 
-*Validate in a weekend. Build with confidence.*
+*Validate in 10 minutes. Build with confidence.*
 
 </div>

@@ -1,0 +1,6 @@
+---
+description: Skill — decision-memo. Writes a human-readable decision brief: verdict, score, top 3 strengths, top 3 risks, next step.
+globs: []
+---
+
+See [skills/decision-memo/SKILL.md](../../skills/decision-memo/SKILL.md) for full instructions and output schema.

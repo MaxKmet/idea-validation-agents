@@ -1,0 +1,6 @@
+---
+description: Skill — retention-predictor. Predicts retention potential via usage frequency, habit formation mechanics, and churn risk factors.
+globs: []
+---
+
+See [skills/retention-predictor/SKILL.md](../../skills/retention-predictor/SKILL.md) for full instructions and output schema.

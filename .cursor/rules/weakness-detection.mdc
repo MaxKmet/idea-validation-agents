@@ -1,0 +1,6 @@
+---
+description: Skill — weakness-detection. Analyzes idea scores to identify weak dimensions, root causes, and probable failure modes.
+globs: []
+---
+
+See [skills/weakness-detection/SKILL.md](../../skills/weakness-detection/SKILL.md) for full instructions and output schema.

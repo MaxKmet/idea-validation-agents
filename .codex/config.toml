@@ -1,0 +1,11 @@
+#:schema https://developers.openai.com/codex/config-schema.json
+
+# Enable live web search
+web_search = "live"
+
+# Apply project permissions profile
+default_permissions = "project"
+
+[permissions.project.filesystem.":project_roots"]
+"." = "read"
+"memory" = "write"

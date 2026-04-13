@@ -1,0 +1,6 @@
+---
+description: Skill — user-segmentation-profiler. Classifies the user into an ICP tier (beginner/builder/growth) based on experience, constraints, and goals.
+globs: []
+---
+
+See [skills/user-segmentation-profiler/SKILL.md](../../skills/user-segmentation-profiler/SKILL.md) for full instructions and output schema.

@@ -1,5 +1,5 @@
 ---
-description: Skill — pivot-engine. Generates structured pivot options (audience narrowing, feature simplification, niche pivot, pricing change).
+description: Skill — pivot-engine. Generates structured pivot options and writes pivot_options.json (structured data) + pivot_report.md (human-readable brief with evidence, score projections, trade-offs, and recommendation).
 globs: []
 ---
 

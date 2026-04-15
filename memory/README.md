@@ -27,7 +27,8 @@ memory/
       complexity.json
       scores.json
       weaknesses.json
-      pivot_options.json
+      pivot_options.json    # Structured pivot data for downstream re-scoring
+      pivot_report.md       # Human-readable pivot brief (evidence, projections, recommendation)
       pivot_scores.json
       decision_memo.md
 ```

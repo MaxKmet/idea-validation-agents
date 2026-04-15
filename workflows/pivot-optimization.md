@@ -43,8 +43,8 @@ User expresses one of:
 
 3. pivot-engine
    ↓ reads: memory/ideas/<slug>/weaknesses.json + scores.json
-   ↓ writes: memory/ideas/<slug>/pivot_options.json
-   → present: Show 2–3 concrete pivot options, each with the type of change (audience / pricing / niche / feature), expected score impact, and effort level. Full options at memory/ideas/<slug>/pivot_options.json
+   ↓ writes: memory/ideas/<slug>/pivot_options.json + memory/ideas/<slug>/pivot_report.md
+   → present: Share the full pivot_report.md inline. Files also saved at memory/ideas/<slug>/pivot_options.json and memory/ideas/<slug>/pivot_report.md
 
 4. idea-scoring (re-score recommended pivot variant)
    ↓ reads: pivot_options.json + existing dimension files (adjusted for pivot)
@@ -63,7 +63,8 @@ User expresses one of:
 
 ## Exit Output
 
-- `memory/ideas/<slug>/pivot_options.md` — 2–3 concrete pivot options with expected score impact
+- `memory/ideas/<slug>/pivot_report.md` — human-readable pivot brief with evidence-backed options, score projections, trade-offs, and recommended first action
+- `memory/ideas/<slug>/pivot_options.json` — structured pivot data for downstream re-scoring
 - `memory/ideas/<slug>/pivot_scores.json` — projected score for the recommended pivot
 
 If the recommended pivot scores ≥ 50 → suggest running full `idea-validation` on the pivot variant (create new idea slug).

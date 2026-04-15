@@ -3,7 +3,7 @@ name: pivot-engine
 description: Generates structured pivot options for a scored idea based on weak dimensions, market_insights signals, and founder constraints. Includes scoring simulation, minimum viable pivot criteria, effort estimation, and indie buildability filtering.
 ---
 
-<!-- version: 0.2.0 | outputs: memory/ideas/<slug>/pivot_options.json -->
+<!-- version: 0.3.0 | outputs: memory/ideas/<slug>/pivot_options.json + memory/ideas/<slug>/pivot_report.md -->
 
 # Skill: pivot-engine
 
@@ -181,7 +181,12 @@ Tie-breakers:
 
 ## Output
 
-Write to `memory/ideas/<slug>/pivot_options.json`:
+Write two files to `memory/ideas/<slug>/`:
+
+### 1. `pivot_options.json`
+
+Machine-readable structured data for downstream skills (`idea-scoring`, `decision-memo`):
+
 
 ```json
 {
@@ -239,6 +244,103 @@ Write to `memory/ideas/<slug>/pivot_options.json`:
   "market_insights_sources_used": []
 }
 ```
+
+### 2. `pivot_report.md`
+
+Human-readable pivot brief. This is the document the founder actually reads. Write it after `pivot_options.json` is complete — source all data from the JSON, don't introduce new judgements.
+
+#### Structure
+
+```markdown
+---
+idea_slug: <slug>
+original_score: <X>
+original_verdict: <verdict>
+recommended_pivot: <pivot_id>
+created_at: <YYYY-MM-DD>
+---
+
+# Pivot Report: <Idea Name>
+
+## Why the Original Idea Scored <X>/100
+
+<2–3 sentences. State the root cause of the low score plainly — not a list of every problem, just the one or two structural reasons the idea can't work as-is. Cite specific scores from scores.json (e.g. "Distribution scored 34/100 because…"). No hedging.>
+
+---
+
+## What Can Be Fixed vs. What Can't
+
+**Addressable weaknesses** (pivot targets):
+- <dimension>: <1-sentence root cause and why it's fixable>
+- ...
+
+**Structural weaknesses** (cannot be pivoted away):
+- <dimension>: <1-sentence root cause and why no pivot can fix it>
+- ...
+
+<If all weaknesses are structural, state clearly that a pivot is unlikely to rescue this idea and explain why.>
+
+---
+
+## Pivot Options
+
+### Option 1 — <Pivot Type>: <Short Name> · Projected score: <low>–<high>/100 · Effort: <tier_adjusted_level>
+
+**The change:** <1–2 sentences. Be specific about exactly what changes — audience, feature, channel, pricing model, platform. Name concrete details (specific subreddits, competitor pricing, App Store keywords, etc.).>
+
+**Why this works:** <2–3 sentences grounded in evidence. Cite the market_insights signal, competitor gap, or user complaint that supports this direction. Name the source (e.g. "r/FigmaDesign has 150K active members discussing invoice pain", "BookPal's 1-star reviews consistently mention X", "TikTok hashtag #X has 40M views and rising velocity").>
+
+**What stays the same:** <1 sentence. What existing work and strengths are preserved.>
+
+**Score projection:**
+| Dimension | Current | Projected |
+|---|---|---|
+| <dimension> | <current>/100 | <low>–<high>/100 |
+| <dimension (worsened)> | <current>/100 | <low>–<high>/100 |
+| ... | ... | unchanged |
+
+**Trade-offs:** <1–2 sentences. What this pivot gives up. Be honest — every pivot has a cost.>
+
+**Effort:** <What specifically needs to change — code, copy, positioning, research. Timeline.>
+
+---
+
+### Option 2 — <Pivot Type>: <Short Name> · Projected score: <low>–<high>/100 · Effort: <tier_adjusted_level>
+
+<Same structure as Option 1.>
+
+---
+
+### Option 3 — <Pivot Type>: <Short Name> · Projected score: <low>–<high>/100 · Effort: <tier_adjusted_level> *(optional)*
+
+<Same structure as Option 1. Include only if a genuinely distinct third option exists.>
+
+---
+
+## Recommendation
+
+**Go with Option <N> — <Short Name>.**
+
+<3–4 sentences. State why this option has the best impact-to-effort ratio. Reference the scoring simulation. Name the one thing that makes this pivot more credible than the alternatives (the market signal, the competitor gap, the distribution advantage). End with a specific first action the founder should take this week.>
+
+**If this pivot also scores below 50:** <1 sentence — what that means and what to do (drop, major rethink, or new idea slug).>
+
+---
+
+## What to Do First
+
+<1–3 concrete steps, ordered. Each step should be doable within a week. No vague advice — name the specific subreddit, pricing change, App Store keyword, or feature to cut. If a RAT experiment makes sense before committing to the pivot, define it here: ≤2 weeks, ≤$100, pass/fail criteria.>
+```
+
+#### Writing rules for `pivot_report.md`
+
+1. **Every claim cites a source.** Name the market_insights file, competitor data point, or dimension score behind every assertion. "Demand is weak" is not a claim — "Demand scored 36/100 because search volume for 'invoice app for freelancers' is 2,400/mo, below the 10K threshold for a viable indie SOM" is.
+2. **Options must be meaningfully distinct.** Don't generate three variations of the same audience pivot. Each option should change a different variable.
+3. **Score projections must be ranges, not false precision.** `62–71/100` is honest. `67/100` implies certainty the model doesn't have.
+4. **The recommendation must pick one.** Not "it depends" — commit to the best option and explain why.
+5. **Total length: ~500–800 words.** Cut anything that doesn't help the founder decide. This is a decision brief, not a research report.
+
+---
 
 ## Notes
 

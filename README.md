@@ -15,6 +15,8 @@ AI agents that act as your personal venture analyst — from startup idea brains
 ![No Setup](https://img.shields.io/badge/Setup-None_Required-brightgreen)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
+⭐ **Star this repo if you've ever asked ChatGPT to generate a million dollar idea.**
+
 </div>
 
 ---

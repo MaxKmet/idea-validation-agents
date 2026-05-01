@@ -9,7 +9,7 @@
 
 AI agents that act as your personal venture analyst — from startup idea brainstorming to full validation and go-to-market strategy. Built for indie developers who'd rather validate in 10 minutes than regret in six months. Powered by Claude Code, OpenAI Codex, and Cursor.
 
-[![Stars](https://img.shields.io/github/stars/MaxKmet/idea-validation-agents?style=social)](https://github.com/MaxKmet/idea-validation-agents)
+[![Stars](https://img.shields.io/github/stars/MaxKmet/idea-validation-agents?style=flat-square&logo=github&label=Stars)](https://github.com/MaxKmet/idea-validation-agents)
 ![AI Agents](https://img.shields.io/badge/AI_Agents-15_Skills-blue)
 ![Platforms](https://img.shields.io/badge/Platforms-Claude_Code_%7C_Codex_%7C_Cursor-green)
 ![No Setup](https://img.shields.io/badge/Setup-None_Required-brightgreen)
